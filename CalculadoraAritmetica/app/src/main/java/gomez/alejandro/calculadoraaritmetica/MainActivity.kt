@@ -11,6 +11,23 @@ import androidx.core.view.WindowInsetsCompat
 class MainActivity : AppCompatActivity() {
     private var operacion: String? = null
     private var valorPrimero: Double? = null
+    private lateinit var btnUno: Button
+    private lateinit var btnDos: Button
+    private lateinit var btnTres: Button
+    private lateinit var btnCuatro: Button
+    private lateinit var btnCinco: Button
+    private lateinit var btnSeis: Button
+    private lateinit var btnSiete: Button
+    private lateinit var btnOcho: Button
+    private lateinit var btnNueve: Button
+    private lateinit var btnCero: Button
+    private lateinit var btnLimpiar: Button
+    private lateinit var btnMulti: Button
+    private lateinit var btnDivision: Button
+    private lateinit var btnSuma: Button
+    private lateinit var btnResta: Button
+    private lateinit var btnIgual: Button
+    private lateinit var txtResultado: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,23 +39,23 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val btnUno: Button = findViewById(R.id.btnUno) as Button
-        val btnDos: Button = findViewById(R.id.btnDos) as Button
-        val btnTres: Button = findViewById(R.id.btnTres) as Button
-        val btnCuatro: Button = findViewById(R.id.btnCuatro) as Button
-        val btnCinco: Button = findViewById(R.id.btnCinco) as Button
-        val btnSeis: Button = findViewById(R.id.btnSeis) as Button
-        val btnSiete: Button = findViewById(R.id.btnSiete) as Button
-        val btnOcho: Button = findViewById(R.id.btnOcho) as Button
-        val btnNueve: Button = findViewById(R.id.btnNueve) as Button
-        val btnCero: Button = findViewById(R.id.btnCero) as Button
-        val btnLimpiar: Button = findViewById(R.id.btnLimpiar) as Button
-        val btnMulti: Button = findViewById(R.id.btnMulti) as Button
-        val btnDivision: Button = findViewById(R.id.btnDivision) as Button
-        val btnSuma: Button = findViewById(R.id.btnSuma) as Button
-        val btnResta: Button = findViewById(R.id.btnResta) as Button
-        val btnIgual: Button = findViewById(R.id.btnIgual) as Button
-        val txtResultado: TextView = findViewById(R.id.txtResultado) as TextView
+        btnUno = findViewById(R.id.btnUno)
+        btnDos = findViewById(R.id.btnDos)
+        btnTres = findViewById(R.id.btnTres)
+        btnCuatro = findViewById(R.id.btnCuatro)
+        btnCinco = findViewById(R.id.btnCinco)
+        btnSeis = findViewById(R.id.btnSeis)
+        btnSiete = findViewById(R.id.btnSiete)
+        btnOcho = findViewById(R.id.btnOcho)
+        btnNueve = findViewById(R.id.btnNueve)
+        btnCero = findViewById(R.id.btnCero)
+        btnLimpiar = findViewById(R.id.btnLimpiar)
+        btnMulti = findViewById(R.id.btnMulti)
+        btnDivision = findViewById(R.id.btnDivision)
+        btnSuma = findViewById(R.id.btnSuma)
+        btnResta = findViewById(R.id.btnResta)
+        btnIgual = findViewById(R.id.btnIgual)
+        txtResultado = findViewById(R.id.txtResultado)
 
         btnUno.setOnClickListener {
             txtResultado.text = "${txtResultado.text}1"
@@ -80,11 +97,54 @@ class MainActivity : AppCompatActivity() {
             txtResultado.text = "${txtResultado.text}0"
         }
 
+        btnLimpiar.setOnClickListener {
+            txtResultado.text = ""
+            limpiarEstado()
+        }
+
         btnSuma.setOnClickListener{
             establecerOperacion("+")
             txtResultado.text = ""
         }
 
+        btnResta.setOnClickListener{
+            establecerOperacion("-")
+            txtResultado.text = ""
+        }
+
+        btnMulti.setOnClickListener{
+            establecerOperacion("*")
+            txtResultado.text = ""
+        }
+
+        btnDivision.setOnClickListener{
+            establecerOperacion("/")
+            txtResultado.text = ""
+        }
+
+        btnIgual.setOnClickListener {
+            if (operacion != null && valorPrimero != null) {
+                val valorSegundo = txtResultado.text.toString().toDoubleOrNull()
+                if (valorSegundo != null) {
+                    val resultado = realizarOperacion(valorPrimero!!, valorSegundo, operacion!!)
+                    txtResultado.text = resultado.toString()
+                    limpiarEstado()
+                } else {
+                    txtResultado.text = "Error"
+                }
+            }
+        }
+
+    }
+
+    private fun realizarOperacion(valor1: Double, valor2: Double, op: String): Double {
+        return when (op) {
+            "+" -> valor1 + valor2
+            "-" -> valor1 - valor2
+            "*" -> valor1 * valor2
+            "/" -> if (valor2 != 0.0) valor1 / valor2 else Double.NaN
+            else -> Double.NaN
+        }
     }
 
     private fun establecerOperacion(op: String) {
@@ -92,5 +152,10 @@ class MainActivity : AppCompatActivity() {
         if (valorPrimero != null) {
             operacion = op
         }
+    }
+
+    private fun limpiarEstado() {
+        operacion = null
+        valorPrimero = null
     }
 }
