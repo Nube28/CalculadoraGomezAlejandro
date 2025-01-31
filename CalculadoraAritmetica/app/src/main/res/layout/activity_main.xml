@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnMulti"
+        android:layout_width="79dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="13dp"
+        android:text="@string/multiplicacion"
+        android:fontFamily="@font/comicsans"
+        app:layout_constraintBottom_toTopOf="@+id/btnResta"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnDivision"
+        android:layout_width="79dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="11dp"
+        android:text="@string/division"
+        android:fontFamily="@font/comicsans"
+        app:layout_constraintBottom_toTopOf="@+id/btnMulti"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnResta"
+        android:layout_width="79dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="14dp"
+        android:text="@string/menos"
+        android:fontFamily="@font/comicsans"
+        app:layout_constraintBottom_toTopOf="@+id/btnSuma"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnSuma"
+        android:layout_width="79dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="13dp"
+        android:text="@string/mas"
+        android:fontFamily="@font/comicsans"
+        app:layout_constraintBottom_toTopOf="@+id/btnIgual"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnIgual"
+        android:layout_width="79dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="223dp"
+        android:text="@string/igual"
+        android:fontFamily="@font/comicsans"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnUno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="281dp"
+        android:text="@string/uno"
+        android:fontFamily="@font/comicsans"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/comicsans"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022"
+        tools:text="@string/app_name" />
+
+    <Button
+        android:id="@+id/btnLimpiar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="220dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/limpiar"
+        android:fontFamily="@font/comicsans"
+        app:layout_constraintBottom_toTopOf="@+id/btnNueve"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnSiete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/siete"
+        android:fontFamily="@font/comicsans"
+        app:layout_constraintBottom_toTopOf="@+id/btnCuatro"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnTres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="281dp"
+        android:text="@string/tres"
+        android:fontFamily="@font/comicsans"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnSuma" />
+
+    <Button
+        android:id="@+id/btnSeis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="13dp"
+        android:text="@string/seis"
+        android:fontFamily="@font/comicsans"
+        app:layout_constraintBottom_toTopOf="@+id/btnTres"
+        app:layout_constraintEnd_toStartOf="@+id/btnResta" />
+
+    <Button
+        android:id="@+id/btnNueve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/nueve"
+        android:fontFamily="@font/comicsans"
+        app:layout_constraintBottom_toTopOf="@+id/btnSeis"
+        app:layout_constraintEnd_toStartOf="@+id/btnMulti" />
+
+    <Button
+        android:id="@+id/btnOcho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginBottom="11dp"
+        android:text="@string/ocho"
+        android:fontFamily="@font/comicsans"
+        app:layout_constraintBottom_toTopOf="@+id/btnCinco"
+        app:layout_constraintStart_toEndOf="@+id/btnSiete" />
+
+    <Button
+        android:id="@+id/btnCero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginBottom="222dp"
+        android:text="@string/cero"
+        android:fontFamily="@font/comicsans"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnCinco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="11dp"
+        android:text="@string/cinco"
+        android:fontFamily="@font/comicsans"
+        app:layout_constraintStart_toEndOf="@+id/btnCuatro"
+        app:layout_constraintTop_toBottomOf="@+id/btnOcho" />
+
+    <Button
+        android:id="@+id/btnDos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/dos"
+        android:fontFamily="@font/comicsans"
+        app:layout_constraintBottom_toTopOf="@+id/btnCero"
+        app:layout_constraintStart_toEndOf="@+id/btnUno"
+        app:layout_constraintTop_toBottomOf="@+id/btnCinco" />
+
+    <Button
+        android:id="@+id/btnCuatro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="13dp"
+        android:text="@string/cuatro"
+        android:fontFamily="@font/comicsans"
+        app:layout_constraintBottom_toTopOf="@+id/btnUno"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtResultado"
+        android:layout_width="346dp"
+        android:layout_height="86dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="69dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
